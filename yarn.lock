@@ -3525,6 +3525,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bootstrap-icons@npm:^1.13.1":
+  version: 1.13.1
+  resolution: "bootstrap-icons@npm:1.13.1"
+  checksum: 10c0/2c1adeb1796502e67b476ce049c86bc3a7ff7984c61777e056820389a8db5ec6535c12a33f76f3ed52674bca4c01472065a7fbcde6cc384ebb86c2eae51390bd
+  languageName: node
+  linkType: hard
+
 "bootstrap@npm:^5.3.6":
   version: 5.3.6
   resolution: "bootstrap@npm:5.3.6"
@@ -6233,6 +6240,7 @@ __metadata:
     "@typescript-eslint/parser": "npm:^8.15.0"
     "@vitejs/plugin-react": "npm:^4.2.1"
     bootstrap: "npm:^5.3.6"
+    bootstrap-icons: "npm:^1.13.1"
     eslint: "npm:^9.15.0"
     eslint-config-prettier: "npm:^9.1.0"
     eslint-plugin-react: "npm:^7.37.2"
