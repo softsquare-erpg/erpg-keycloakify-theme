@@ -12,20 +12,22 @@
         "build": "tsc && vite build",
         "build-keycloak-theme": "npm run build && keycloakify build",
         "storybook": "storybook dev -p 6006",
-        "format": "prettier . --write"
+        "format": "prettier . --write",
+        "test-inside": "keycloakify start-keycloak"
     },
     "license": "MIT",
     "keywords": [],
     "dependencies": {
+        "bootstrap": "^5.3.6",
         "keycloakify": "^11.8.32",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
     },
     "devDependencies": {
         "@eslint/js": "^9.15.0",
-        "storybook": "^8.1.10",
         "@storybook/react": "^8.1.10",
         "@storybook/react-vite": "^8.1.10",
+        "@types/bootstrap": "^5",
         "@types/react": "^18.2.43",
         "@types/react-dom": "^18.2.17",
         "@typescript-eslint/eslint-plugin": "^8.15.0",
@@ -39,6 +41,7 @@
         "eslint-plugin-storybook": "^0.11.1",
         "globals": "^15.12.0",
         "prettier": "3.3.1",
+        "storybook": "^8.1.10",
         "typescript": "^5.2.2",
         "typescript-eslint": "^8.15.0",
         "vite": "^5.0.8"
