@@ -1,8 +1,11 @@
 @import url(/fonts/prompt.css);
 @import url(/fonts/icon.css);
+@import url(bootstrap/dist/css/bootstrap.min.css);
+@import url(bootstrap-icons/font/bootstrap-icons.css);
 
 :scope {
     /* M3 light color scheme */
+    /* Material Theme Builder https://material-foundation.github.io/material-theme-builder */
     --md-sys-color-primary: rgb(68 94 145);
     --md-sys-color-surface-tint: rgb(68 94 145);
     --md-sys-color-on-primary: rgb(255 255 255);
@@ -61,7 +64,7 @@ body {
 body.kcBodyClass {
     background:
         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url("/images/background.webp") no-repeat top left fixed;
+        url("/image/background.webp") no-repeat top left fixed;
     background-size: cover;
     font-size: 14px;
 }
