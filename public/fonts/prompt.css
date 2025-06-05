@@ -1,0 +1,79 @@
+/*
+ * Entry point of global application style.
+ * Component-specific style should not go here and be included directly as part of the components.
+ */
+
+/* prompt-300 - thai_latin */
+
+@font-face {
+    font-family: "Prompt";
+    font-style: normal;
+    font-weight: 300;
+    src:
+        local("Prompt Light"),
+        local("Prompt-Light"),
+        url("prompt-v4-thai_latin-300.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */ url("prompt-v4-thai_latin-300.woff")
+            format("woff");
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* prompt-regular - thai_latin */
+
+@font-face {
+    font-family: "Prompt";
+    font-style: normal;
+    font-weight: 400;
+    src:
+        local("Prompt"),
+        local("Prompt-Regular"),
+        url("prompt-v4-thai_latin-regular.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */ url("prompt-v4-thai_latin-regular.woff")
+            format("woff");
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* prompt-500 - thai_latin */
+
+@font-face {
+    font-family: "Prompt";
+    font-style: normal;
+    font-weight: 500;
+    src:
+        local("Prompt Medium"),
+        local("Prompt-Medium"),
+        url("prompt-v4-thai_latin-500.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */ url("prompt-v4-thai_latin-500.woff")
+            format("woff");
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* prompt-600 - thai_latin */
+
+@font-face {
+    font-family: "Prompt";
+    font-style: normal;
+    font-weight: 600;
+    src:
+        local("Prompt SemiBold"),
+        local("Prompt-SemiBold"),
+        url("prompt-v4-thai_latin-600.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */ url("prompt-v4-thai_latin-600.woff")
+            format("woff");
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* prompt-700 - thai_latin */
+
+@font-face {
+    font-family: "Prompt";
+    font-style: normal;
+    font-weight: 700;
+    src:
+        local("Prompt Bold"),
+        local("Prompt-Bold"),
+        url("prompt-v4-thai_latin-700.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */ url("prompt-v4-thai_latin-700.woff")
+            format("woff");
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
