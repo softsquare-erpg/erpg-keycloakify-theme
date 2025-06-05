@@ -29,6 +29,11 @@ The `mvn` command must be in the $PATH.
 -   On Debian/Ubuntu: `sudo apt-get install maven`
 -   On Windows: `choco install openjdk` and `choco install maven` (Or download from [here](https://maven.apache.org/download.cgi))
 
+If you use sdkman you can execute to prepare the proper Java SDK.
+```bash
+sdk env install
+```
+
 ```bash
 npm run build-keycloak-theme
 ```
