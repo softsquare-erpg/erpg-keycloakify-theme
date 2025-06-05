@@ -1,0 +1,145 @@
+@import url("../theme/light.css");
+
+:scope {
+    --custom-accent-dimmed: #f3fff9;
+    /* override bootstrap, for signin btn:active */
+    --bs-secondary: rgba(var(--bs-body-color-rgb), 0.65);
+    --bs-btn-active-color: var(--md-sys-color-on-primary-container);
+    --bs-btn-active-bg: var(--md-sys-color-primary);
+    --bs-btn-active-border-color: var(--bs-border-color-translucent);
+    --bs-border-color: var(--md-sys-color-outline);
+    --bs-form-invalid-color: var(--md-sys-color-error);
+}
+
+.login-pf-page .logo {
+    width: 96px;
+    height: auto;
+    margin-bottom: 1em;
+}
+.login-pf-page imglogo {
+    /* find color from
+   - https://change-svg-color.vercel.app/
+   - https://cssfilterconverter.com/ */
+    filter: brightness(0) saturate(100%) invert(30%) sepia(40%) saturate(1176%)
+        hue-rotate(125deg) brightness(94%) contrast(101%);
+}
+.login-pf .card-pf {
+    border-radius: 0.4rem;
+}
+.login-pf-page .btn {
+    box-shadow: none;
+}
+.login-pf-page .list-view-pf .list-group-item {
+    border-bottom: 1px solid #ededed;
+}
+.login-pf-page .list-view-pf-description {
+    width: 100%;
+}
+.pf-c-form__label-text {
+    color: var(--bs-gray-700);
+}
+.card-pf {
+    border-top: 4px solid;
+    border-color: var(--md-sys-color-primary);
+}
+.pf-c-button.pf-m-primary {
+    background-color: var(--md-sys-color-primary);
+}
+/* fixes for floating labels */
+.input-group .form-control:focus {
+    z-index: auto;
+}
+.form-control:focus {
+    z-index: auto;
+    border-color: var(--md-sys-color-outline);
+    box-shadow: 0 0 0.25rem rgba(11, 107, 89, 0.25);
+    outline: 0;
+    border-width: 2px;
+}
+.form-control:hover {
+    border-color: var(--md-sys-color-outline);
+}
+.form-control::placeholder {
+    color: var(--md-sys-color-on-surface-variant);
+    opacity: 1; /* Firefox */
+}
+.form-control::-ms-input-placeholder {
+    /* Edge 12 -18 */
+    color: var(--md-sys-color-on-surface-variant);
+}
+.login-header-text {
+    color: var(--md-sys-color-primary);
+}
+a#kc-current-locale-link {
+    text-decoration: none;
+}
+a#kc-current-locale-link::after {
+    content: "\F282";
+    font-family: bootstrap-icons !important;
+    text-decoration: none;
+}
+.login-pf-settings a {
+    color: var(--md-sys-color-on-primary-fixed-variant);
+}
+
+.login-pf-settings a:hover {
+    color: var(--md-sys-color-surface-tint);
+}
+
+.btn-signin {
+    filter: opacity(1);
+    color: var(--md-sys-color-on-primary);
+    background-color: var(--md-sys-color-primary);
+    width: 100%;
+}
+.btn-signin:hover,
+.btn-signin:focus,
+.btn-signin:focus-visible {
+    filter: opacity(0.8);
+    color: var(--md-sys-color-on-primary);
+    background-color: var(--md-sys-color-primary);
+}
+.btn-signin:active {
+    filter: opacity(1);
+    box-shadow: 0 0 0.25rem 2px rgba(0, 32, 25, 0.25);
+}
+.btn-signin:disabled {
+    opacity: 0.9;
+    color: var(--md-sys-color-on-primary) !important;
+    background-color: var(--md-sys-color-primary) !important;
+}
+
+.form-control.is-invalid:focus {
+    border-color: var(--bs-form-invalid-border-color);
+}
+.form-control.is-invalid:hover {
+    border-color: var(--bs-form-invalid-border-color);
+}
+.btn:hover {
+    color: #fff;
+    background-color: color-mix(in srgb, var(--md-sys-color-primary) 90%, white);
+}
+.form-floating label.text-secondary {
+    color: var(--md-sys-color-on-surface-variant) !important;
+}
+
+#kc-locale-dropdown a {
+    color: var(--md-sys-color-on-surface);
+    text-decoration: none;
+}
+.pf-c-dropdown__menu-item:focus,
+.pf-c-dropdown__menu-item:active {
+    outline: none;
+    border: none;
+}
+
+input[type="checkbox"] {
+    accent-color: var(--md-sys-color-primary);
+}
+
+.form-floating > .form-control {
+    padding: 12px 16px;
+}
+.form-floating > label {
+    padding: 12px 16px;
+}
