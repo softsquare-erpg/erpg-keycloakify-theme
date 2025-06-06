@@ -1,10 +1,11 @@
 {
-    "name": "keycloakify-starter",
-    "version": "0.0.0",
-    "description": "Starter for Keycloakify 11",
+    "name": "erpg-keycloakify-theme",
+    "version": "1.0.0",
+    "description": "Theme for ERPG using Keycloakify",
+    "author": "Adsadawut h. <l3omb.io>",
     "repository": {
         "type": "git",
-        "url": "git://github.com/codegouvfr/keycloakify-starter.git"
+        "url": "git://github.com/softsquare-erpg/erpg-keycloakify-theme.git"
     },
     "type": "module",
     "scripts": {
