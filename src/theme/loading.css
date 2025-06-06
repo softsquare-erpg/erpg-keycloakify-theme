@@ -1,0 +1,50 @@
+/* Overlay area */
+.loading-area {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.57);
+}
+
+/* Animated circular borders */
+.load_anim1,
+.load_anim2 {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 5px solid;
+    border-left-color: #5a9bd5;
+    border-top-color: #5a9bd5;
+    border-right-color: #203864;
+    border-bottom-color: #5a9bd5;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -150px 0 0 -150px;
+    animation: loadAnim 2s linear infinite;
+}
+
+.load_anim2 {
+    border-bottom-color: #203864;
+    border-top-color: #5a9bd5;
+    animation: loadAnim2 2s linear infinite;
+}
+
+/* Keyframes for spinning animation */
+@keyframes loadAnim {
+    0% {
+        transform: rotate3d(1, 1, 1, 0deg);
+    }
+    100% {
+        transform: rotate3d(1, 1, 1, 360deg);
+    }
+}
+
+@keyframes loadAnim2 {
+    0% {
+        transform: rotate3d(1, 1, 1, 90deg);
+    }
+    100% {
+        transform: rotate3d(1, 1, 1, -360deg);
+    }
+}

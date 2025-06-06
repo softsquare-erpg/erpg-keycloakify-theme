@@ -5,6 +5,8 @@ import type { TemplateProps } from "keycloakify/login/TemplateProps";
 import { clsx } from "keycloakify/tools/clsx";
 import { useSetClassName } from "keycloakify/tools/useSetClassName";
 import { useEffect } from "react";
+import { Loading } from "../components/Loading";
+import { useLoading } from "../providers/LoadingProvider";
 import type { I18n } from "./i18n";
 import type { KcContext } from "./KcContext";
 
@@ -47,8 +49,10 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
 
     const { isReadyToRender } = useInitialize({ kcContext, doUseDefaultCss });
 
-    if (!isReadyToRender) {
-        return null;
+    const { isLoading } = useLoading();
+
+    if (!isReadyToRender || isLoading) {
+        return <Loading />;
     }
 
     return (

@@ -1,6 +1,7 @@
-import { createRoot } from "react-dom/client";
 import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 import { KcPage } from "./kc.gen";
+import { LoadingProvider } from "./providers/LoadingProvider";
 
 // The following block can be uncommented to test a specific page with `yarn dev`
 // Don't forget to comment back or your bundle size will increase
@@ -17,10 +18,12 @@ if (import.meta.env.DEV) {
 
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
-        {!window.kcContext ? (
-            <h1>No Keycloak Context</h1>
-        ) : (
-            <KcPage kcContext={window.kcContext} />
-        )}
+        <LoadingProvider>
+            {!window.kcContext ? (
+                <h1>No Keycloak Context</h1>
+            ) : (
+                <KcPage kcContext={window.kcContext} />
+            )}
+        </LoadingProvider>
     </StrictMode>
 );
