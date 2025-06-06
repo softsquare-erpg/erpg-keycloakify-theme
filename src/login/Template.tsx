@@ -52,6 +52,10 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
     const { isLoading } = useLoading();
 
     if (!isReadyToRender || isLoading) {
+        // delay 1 second to avoid flickering
+        if (isLoading) {
+            setTimeout(() => {}, 1000);
+        }
         return <Loading />;
     }
 
