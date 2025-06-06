@@ -12,6 +12,19 @@ cd keycloakify-starter
 yarn install # Or use an other package manager, just be sure to delete the yarn.lock if you use another package manager.
 ```
 
+# Update Package.json
+
+-   **Version:** `your theme version`
+-   **Author:** `github username`
+-   **Repository:** `your repository`
+-   **Description:** `description for your theme`
+-   **publishConfig** `your maven.pkg.github.com`
+
+# Update CSS Style Theme
+
+-   **light.css** `color scheme and background image`
+-   **loading.css** `loading color`
+
 # Testing the theme locally
 
 [Documentation](https://docs.keycloakify.dev/testing-your-theme)
@@ -22,7 +35,7 @@ yarn install # Or use an other package manager, just be sure to delete the yarn.
 
 # Building the theme
 
-You need to have [Maven](https://maven.apache.org/) installed to build the theme (Maven >= 3.1.1, Java >= 7).  
+You need to have [Maven](https://maven.apache.org/) installed to build the theme (Maven >= 3.9.9, Java >= 17).
 The `mvn` command must be in the $PATH.
 
 -   On macOS: `brew install maven`
@@ -30,15 +43,24 @@ The `mvn` command must be in the $PATH.
 -   On Windows: `choco install openjdk` and `choco install maven` (Or download from [here](https://maven.apache.org/download.cgi))
 
 If you use sdkman you can execute to prepare the proper Java SDK.
+
 ```bash
 sdk env install
 ```
 
 ```bash
-npm run build-keycloak-theme
+yarn run build-keycloak-theme
 ```
 
-Note that by default Keycloakify generates multiple .jar files for different versions of Keycloak.  
+# Deploy the theme
+
+Execute to deploy maven to your maven.pkg.github.com
+
+```bash
+./deploy-maven.sh
+```
+
+Note that by default Keycloakify generates multiple .jar files for different versions of Keycloak.
 You can customize this behavior, see documentation [here](https://docs.keycloakify.dev/targeting-specific-keycloak-versions).
 
 # Initializing the account theme
@@ -56,7 +78,7 @@ npx keycloakify initialize-email-theme
 # GitHub Actions
 
 The starter comes with a generic GitHub Actions workflow that builds the theme and publishes
-the jars [as GitHub releases artifacts](https://github.com/keycloakify/keycloakify-starter/releases/tag/v10.0.0).  
+the jars [as GitHub releases artifacts](https://github.com/keycloakify/keycloakify-starter/releases/tag/v10.0.0).
 To release a new version **just update the `package.json` version and push**.
 
 To enable the workflow go to your fork of this repository on GitHub then navigate to:
