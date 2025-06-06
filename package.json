@@ -1,11 +1,14 @@
 {
     "name": "erpg-keycloakify-theme",
     "version": "1.0.0",
-    "description": "Theme for ERPG using Keycloakify",
+    "description": "Theme for ERPG using Keycloakify. Provides a custom Keycloak theme with modern UI, Bootstrap 5 styling, and seamless integration for the ERPG platform.",
     "author": "Adsadawut h. <l3omb.io>",
     "repository": {
         "type": "git",
         "url": "git://github.com/softsquare-erpg/erpg-keycloakify-theme.git"
+    },
+    "publishConfig": {
+        "registry": "https://maven.pkg.github.com/softsquare-erpg/erpg-keycloak-theme"
     },
     "type": "module",
     "scripts": {
@@ -50,5 +53,6 @@
     },
     "engines": {
         "node": "^18.0.0 || >=20.0.0"
-    }
+    },
+    "packageManager": "yarn@4.5.1"
 }

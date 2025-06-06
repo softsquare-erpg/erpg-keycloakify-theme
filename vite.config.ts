@@ -1,17 +1,28 @@
 import react from "@vitejs/plugin-react";
 import { keycloakify } from "keycloakify/vite-plugin";
 import { defineConfig } from "vite";
+import { name, version } from "./package.json" assert { type: "json" };
+
+// Reusable variables
+const groupId = "com.softsquare.keycloakify";
+const artifactId = name;
+const themeVersion = version;
+const themeName = name;
 
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [
         react(),
         keycloakify({
-            groupId: "com.softsquare.keycloakify",
-            artifactId: "erpg-keycloakify-theme",
-            themeVersion: "1.0.0",
-            themeName: "erpg-keycloakify-theme",
-            accountThemeImplementation: "none"
+            groupId,
+            artifactId,
+            themeVersion,
+            themeName,
+            accountThemeImplementation: "none",
+            keycloakVersionTargets: {
+                "22-to-25": false,
+                "all-other-versions": `${artifactId}.jar`
+            }
         })
     ]
 });
