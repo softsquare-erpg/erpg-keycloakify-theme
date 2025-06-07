@@ -16,7 +16,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
         classes
     });
 
-    const { realm, url, usernameHidden, login, auth, messagesPerField } = kcContext;
+    const { realm, url, usernameHidden, login, auth, messagesPerField, social } = kcContext;
 
     const { msg, msgStr } = i18n;
 
@@ -33,6 +33,50 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                 <div>
                     <img alt="logo" className={"logo"} src={`${import.meta.env.BASE_URL}/image/logo.png`} aria-hidden="true"></img>
                 </div>
+            }
+            displayInfo={false}
+            infoNode={
+                <div id="kc-registration-container">
+                    <div id="kc-registration">
+                        <span>
+                            {msg("noAccount")}{" "}
+                            <a tabIndex={8} href={url.registrationUrl}>
+                                {msg("doRegister")}
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            }
+            socialProvidersNode={
+                <>
+                    {realm.password && social?.providers !== undefined && social.providers.length !== 0 && (
+                        <div id="kc-social-providers" className={kcClsx("kcFormSocialAccountSectionClass")}>
+                            <hr />
+                            <h2>{msg("identity-provider-login-label")}</h2>
+                            <ul className={kcClsx("kcFormSocialAccountListClass", social.providers.length > 3 && "kcFormSocialAccountListGridClass")}>
+                                {social.providers.map((...[p, , providers]) => (
+                                    <li key={p.alias}>
+                                        <a
+                                            id={`social-${p.alias}`}
+                                            className={kcClsx(
+                                                "kcFormSocialAccountListButtonClass",
+                                                providers.length > 3 && "kcFormSocialAccountGridItem"
+                                            )}
+                                            type="button"
+                                            href={p.loginUrl}
+                                        >
+                                            {p.iconClasses && <i className={clsx(kcClsx("kcCommonLogoIdP"), p.iconClasses)} aria-hidden="true"></i>}
+                                            <span
+                                                className={clsx(kcClsx("kcFormSocialAccountNameClass"), p.iconClasses && "kc-social-icon-text")}
+                                                dangerouslySetInnerHTML={{ __html: kcSanitize(p.displayName) }}
+                                            ></span>
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+                </>
             }
         >
             <div id="kc-form">
@@ -59,7 +103,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                     <input
                                         tabIndex={2}
                                         id="username"
-                                        className={kcClsx("kcInputClass")}
+                                        className={clsx(kcClsx("kcInputClass"), messagesPerField.existsError("username", "password") && "is-invalid")}
                                         name="username"
                                         defaultValue={login.username ?? ""}
                                         type="text"
@@ -88,7 +132,11 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                     <input
                                         tabIndex={3}
                                         id="password"
-                                        className={clsx("rounded-start", kcClsx("kcInputClass"))}
+                                        className={clsx(
+                                            "rounded-start",
+                                            kcClsx("kcInputClass"),
+                                            messagesPerField.existsError("username", "password") && "is-invalid"
+                                        )}
                                         name="password"
                                         type="password"
                                         autoComplete="current-password"
