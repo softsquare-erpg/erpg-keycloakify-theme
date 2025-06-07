@@ -6,7 +6,7 @@ import { clsx } from "keycloakify/tools/clsx";
 import { useSetClassName } from "keycloakify/tools/useSetClassName";
 import { useEffect } from "react";
 import { Loading } from "../components/Loading";
-import { useLoading } from "../providers/LoadingProvider";
+import { useLoading } from "../context/LoadingContext";
 import type { I18n } from "./i18n";
 import type { KcContext } from "./KcContext";
 
@@ -52,9 +52,9 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
     const { isLoading } = useLoading();
 
     if (!isReadyToRender || isLoading) {
-        // delay 1 second to avoid flickering
+        // delay 0.5 second to avoid flickering
         if (isLoading) {
-            setTimeout(() => {}, 1000);
+            setTimeout(() => {}, 500);
         }
         return <Loading />;
     }
