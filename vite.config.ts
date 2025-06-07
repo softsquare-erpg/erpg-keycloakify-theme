@@ -1,13 +1,13 @@
 import react from "@vitejs/plugin-react";
 import { keycloakify } from "keycloakify/vite-plugin";
 import { defineConfig } from "vite";
-import { name, version } from "./package.json" assert { type: "json" };
+import pkg from "./package.json" assert { type: "json" };
 
 // Reusable variables
 const groupId = "com.softsquare.keycloakify";
-const artifactId = name;
-const themeVersion = version;
-const themeName = name;
+const artifactId = pkg.name;
+const themeVersion = pkg.version;
+const themeName = pkg.name;
 
 // https://vitejs.dev/config/
 export default defineConfig({
