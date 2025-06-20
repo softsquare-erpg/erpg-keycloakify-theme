@@ -45,39 +45,42 @@
 .pf-c-button.pf-m-primary {
     background-color: var(--md-sys-color-primary);
 }
+
 /* fixes for floating labels */
 .input-group .form-control:focus {
     z-index: auto;
 }
 .form-control:focus {
     z-index: auto;
-    border-color: var(--md-sys-color-outline);
-    box-shadow: 0 0 0.25rem rgba(11, 107, 89, 0.25);
+    border-color: var(--md-sys-color-primary-fixed-dim);
+    box-shadow: 0 0 0.25rem var(--md-sys-color-primary-fixed-dim);
     outline: 0;
     border-width: 2px;
 }
 .form-control:hover {
-    border-color: var(--md-sys-color-outline);
+    border-color: var(--md-sys-color-primary-fixed-dim);
 }
 .form-control::placeholder {
-    color: var(--md-sys-color-on-surface-variant);
+    color: var(--md-sys-color-outline-variant);
     opacity: 1; /* Firefox */
 }
 .form-control::-ms-input-placeholder {
     /* Edge 12 -18 */
-    color: var(--md-sys-color-on-surface-variant);
+    color: var(--md-sys-color-outline-variant);
 }
 .login-header-text {
     color: var(--md-sys-color-primary);
 }
-a#kc-current-locale-link {
+
+button#kc-current-locale-link {
     text-decoration: none;
 }
-a#kc-current-locale-link::after {
+button#kc-current-locale-link::after {
     content: "\F282";
     font-family: bootstrap-icons !important;
     text-decoration: none;
 }
+
 .login-pf-settings a {
     color: var(--md-sys-color-on-primary-fixed-variant);
 }
@@ -142,4 +145,9 @@ input[type="checkbox"] {
 }
 .form-floating > label {
     padding: 12px 16px;
+}
+
+input::placeholder {
+    color: var(--md-sys-color-on-surface-variant);
+    opacity: 1; /* Firefox */
 }

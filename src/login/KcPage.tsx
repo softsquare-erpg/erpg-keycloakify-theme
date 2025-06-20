@@ -13,6 +13,8 @@ const UserProfileFormFields = lazy(
 );
 
 const Login = lazy(() => import("./pages/Login"));
+const LoginResetPassword = lazy(() => import("./pages/LoginResetPassword"));
+const LoginUpdatePassword = lazy(() => import("./pages/LoginUpdatePassword"));
 
 const doMakeUserConfirmPassword = true;
 
@@ -50,6 +52,22 @@ export default function KcPage(props: { kcContext: KcContext }) {
                                 doUseDefaultCss={true}
                             />
                         );
+                    case "login-reset-password.ftl":
+                        return (
+                            <LoginResetPassword
+                                {...{ kcContext, i18n, classes }}
+                                Template={Template}
+                                doUseDefaultCss={true}
+                            />
+                        );
+                    case "login-update-password.ftl":
+                        return (
+                            <LoginUpdatePassword
+                                {...{ kcContext, i18n, classes }}
+                                Template={Template}
+                                doUseDefaultCss={true}
+                            />
+                        );
                     default:
                         return (
                             <DefaultPage
@@ -73,7 +91,7 @@ const classes = {
     kcInputGroup: "input-group",
     kcInputClass: "form-control text-secondary",
     kcLabelClass: "text-secondary",
-    kcInputErrorMessageClass: "invalid-feedback",
+    kcInputErrorMessageClass: "invalid-feedback d-block",
     kcButtonBlockClass: "btn pf-m-block",
     kcFormPasswordVisibilityButtonClass: "btn btn-outline-secondary border-start-0 py-0",
     kcFormPasswordVisibilityIconHide: "bi bi-eye-slash-fill",

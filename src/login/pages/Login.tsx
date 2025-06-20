@@ -31,7 +31,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
             displayMessage={!messagesPerField.existsError("username", "password")}
             headerNode={
                 <div>
-                    <img alt="logo" className={"logo"} src={`${import.meta.env.BASE_URL}/image/logo.png`} aria-hidden="true"></img>
+                    <img alt="logo" className={"logo"} src={`${import.meta.env.BASE_URL}image/logo.png`} aria-hidden="true"></img>
                 </div>
             }
             displayInfo={false}
@@ -106,6 +106,13 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                         className={clsx(kcClsx("kcInputClass"), messagesPerField.existsError("username", "password") && "is-invalid")}
                                         name="username"
                                         defaultValue={login.username ?? ""}
+                                        placeholder={
+                                            !realm.loginWithEmailAllowed
+                                                ? msgStr("username")
+                                                : !realm.registrationEmailAsUsername
+                                                  ? msgStr("usernameOrEmail")
+                                                  : msgStr("email")
+                                        }
                                         type="text"
                                         autoFocus
                                         autoComplete="username"
@@ -139,6 +146,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                         )}
                                         name="password"
                                         type="password"
+                                        placeholder={`${msgStr("password")}`}
                                         autoComplete="current-password"
                                         aria-invalid={messagesPerField.existsError("username", "password")}
                                     />
