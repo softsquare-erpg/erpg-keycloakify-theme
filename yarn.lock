@@ -4304,7 +4304,7 @@ __metadata:
     eslint-plugin-react-refresh: "npm:^0.4.14"
     eslint-plugin-storybook: "npm:^0.11.1"
     globals: "npm:^15.12.0"
-    keycloakify: "npm:^11.8.32"
+    keycloakify: "npm:^11.8.42"
     prettier: "npm:3.3.1"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
@@ -6259,14 +6259,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"keycloakify@npm:^11.8.32":
-  version: 11.8.32
-  resolution: "keycloakify@npm:11.8.32"
+"keycloakify@npm:^11.8.42":
+  version: 11.8.49
+  resolution: "keycloakify@npm:11.8.49"
   dependencies:
     tsafe: "npm:^1.8.5"
   bin:
     keycloakify: bin/main.js
-  checksum: 10c0/37aa58cc67b51a34d9d6fc17bb880a6c5699333e64346c724042b88739c8a7b6e244eda573c372e55453d10d7b67dd4f1f9424fbb256321bd021702e3857d12d
+  checksum: 10c0/0ee914dacbf52da3392acb7babe27b8eca86622a98a0ce973b6334be303de3949e868a22a626cb568cdc444b2f9e7576cad81c64f8829dff9a656ba13cbfcfed
   languageName: node
   linkType: hard
 

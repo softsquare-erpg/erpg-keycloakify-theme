@@ -24,7 +24,7 @@
     "dependencies": {
         "bootstrap": "^5.3.6",
         "bootstrap-icons": "^1.13.1",
-        "keycloakify": "^11.8.32",
+        "keycloakify": "^11.8.42",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
     },
