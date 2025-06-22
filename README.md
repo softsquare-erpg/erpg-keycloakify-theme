@@ -1,18 +1,16 @@
-<p align="center">
-    <i>🚀 <a href="https://keycloakify.dev">Keycloakify</a> v11 starter 🚀</i>
-    <br/>
-    <br/>
-</p>
+# ERPG Keycloakify Custom Theme
 
-# Quick start
+This Theme Fork from [Keycloakify](https://github.com/keycloakify/keycloakify-starter) v11 starter 🚀
+
+## Quick start
 
 ```bash
-git clone https://github.com/keycloakify/keycloakify-starter
-cd keycloakify-starter
+git clone https://github.com/softsquare-erpg/erpg-keycloakify-theme
+cd erpg-keycloakify-theme
 yarn install # Or use an other package manager, just be sure to delete the yarn.lock if you use another package manager.
 ```
 
-# Update Package.json
+## Update Package.json
 
 -   **Version:** `your theme version`
 -   **Author:** `github username`
@@ -20,20 +18,45 @@ yarn install # Or use an other package manager, just be sure to delete the yarn.
 -   **Description:** `description for your theme`
 -   **publishConfig** `your maven.pkg.github.com`
 
-# Update CSS Style Theme
+## Update CSS Style Theme
 
 -   **light.css** `color scheme and background image`
 -   **loading.css** `loading color`
 
-# Testing the theme locally
+## Testing the theme locally
 
-[Documentation](https://docs.keycloakify.dev/testing-your-theme)
+### Outside of Keycloak
 
-# How to customize the theme
+The recommended way to preview your theme as you develop it is to use [Storybook](https://storybook.js.org/)
 
-[Documentation](https://docs.keycloakify.dev/customization-strategies)
+The starter template does not initially contain any story files, instead there's a keycloakify CLI command that let's you import specifically the stories for the pages you want to test into your project.
 
-# Building the theme
+So, just run this command in the root of your Keycloakify project and select the pages you want.
+
+```bash
+yarn run keycloakify add-story
+```
+
+Once your added a few stories you can start Storybook locally with:
+
+```bash
+yarn run storybook
+```
+
+### Inside of Keycloak
+
+Testing your theme in Storybook is helpful, but eventually, you'll need to test it in a real Keycloak instance before deploying it to production.
+
+#### Prerequisites
+
+    1. Install Docker
+    2. Install Java
+
+```bash
+yarn run keycloakify start-keycloak
+```
+
+## Building the theme
 
 You need to have [Maven](https://maven.apache.org/) installed to build the theme (Maven >= 3.9.9, Java >= 17).
 The `mvn` command must be in the $PATH.
@@ -52,34 +75,10 @@ sdk env install
 yarn run build-keycloak-theme
 ```
 
-# Deploy the theme
+## Deploy the theme
 
 Execute to deploy maven to your maven.pkg.github.com
 
 ```bash
 ./deploy-maven.sh
 ```
-
-Note that by default Keycloakify generates multiple .jar files for different versions of Keycloak.
-You can customize this behavior, see documentation [here](https://docs.keycloakify.dev/targeting-specific-keycloak-versions).
-
-# Initializing the account theme
-
-```bash
-npx keycloakify initialize-account-theme
-```
-
-# Initializing the email theme
-
-```bash
-npx keycloakify initialize-email-theme
-```
-
-# GitHub Actions
-
-The starter comes with a generic GitHub Actions workflow that builds the theme and publishes
-the jars [as GitHub releases artifacts](https://github.com/keycloakify/keycloakify-starter/releases/tag/v10.0.0).
-To release a new version **just update the `package.json` version and push**.
-
-To enable the workflow go to your fork of this repository on GitHub then navigate to:
-`Settings` > `Actions` > `Workflow permissions`, select `Read and write permissions`.
