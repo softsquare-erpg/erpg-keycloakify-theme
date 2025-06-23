@@ -26,11 +26,11 @@ jobs:
                   node-version: "20"
                   cache: "npm"
 
-            - name: Install yarn
-              run: npm install -g yarn
+            - name: Enable Corepack (for Yarn 4+)
+              run: corepack enable
 
-            - name: Install dependencies
-              run: yarn install --frozen-lockfile
+            - name: Install dependencies using Yarn 4
+              run: yarn install --immutable
 
             - name: Build Keycloak theme
               run: yarn run build-keycloak-theme
