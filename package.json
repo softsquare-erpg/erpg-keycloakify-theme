@@ -16,8 +16,7 @@
         "build": "tsc && vite build",
         "build-keycloak-theme": "npm run build && keycloakify build",
         "storybook": "storybook dev -p 6006",
-        "format": "prettier . --write",
-        "test-inside": "keycloakify start-keycloak"
+        "format": "prettier . --write"
     },
     "license": "MIT",
     "keywords": [],
