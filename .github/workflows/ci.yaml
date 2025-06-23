@@ -55,6 +55,8 @@ jobs:
               run: chmod +x ./mvnw
 
             - name: Deploy to Maven repository
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               run: |
                   ./mvnw -B --quiet deploy:deploy-file \
                     -s .github/mvn-settings.xml \
