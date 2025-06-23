@@ -8,7 +8,7 @@
         "url": "git://github.com/softsquare-erpg/erpg-keycloakify-theme.git"
     },
     "publishConfig": {
-        "registry": "https://maven.pkg.github.com/softsquare-erpg/erpg-keycloak-theme"
+        "registry": "https://maven.pkg.github.com/softsquare-erpg/erpg-keycloakify-theme"
     },
     "type": "module",
     "scripts": {
