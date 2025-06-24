@@ -26,7 +26,7 @@ export default defineConfig({
                 "all-other-versions": `${artifactId}.jar`
             },
             startKeycloakOptions: {
-                dockerExtraArgs: [`-e KC_CLIENT_1_URL=https://my-theme.keycloakify.dev`],
+                dockerExtraArgs: [`-e CLIENT_1_URL=https://my-theme.keycloakify.dev`],
                 keycloakExtraArgs: [`--spi-theme-welcome-theme=${themeName}`]
             },
             postBuild: async ({ keycloakifyBuildDirPath }) => {
