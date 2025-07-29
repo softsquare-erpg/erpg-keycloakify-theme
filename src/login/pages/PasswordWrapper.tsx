@@ -14,8 +14,7 @@ export default function PasswordWrapper(props: {
     kcSanitize: typeof kcSanitize;
     passwordValue?: string;
 }) {
-    const { kcClsx, messagesPerField, usernameHidden, msg, kcSanitize, passwordValue } =
-        props;
+    const { kcClsx, messagesPerField, usernameHidden, msg, kcSanitize, passwordValue } = props;
     const passwordInputId = "password";
     const { isPasswordRevealed, toggleIsPasswordRevealed } = useIsPasswordRevealed({
         passwordInputId
@@ -31,43 +30,29 @@ export default function PasswordWrapper(props: {
                         className={clsx(
                             "rounded-start",
                             kcClsx("kcInputClass"),
-                            messagesPerField.existsError("username", "password") &&
-                                "is-invalid"
+                            messagesPerField.existsError("username", "password") && "is-invalid"
                         )}
                         name="password"
                         type={isPasswordRevealed ? "text" : "password"}
                         autoComplete="off"
                         placeholder={`${msg("password")}`}
                         aria-describedby="input-error input-error-pwdfeedback"
-                        aria-invalid={
-                            messagesPerField.existsError("username", "password")
-                                ? true
-                                : undefined
-                        }
+                        aria-invalid={messagesPerField.existsError("username", "password") ? true : undefined}
                         defaultValue={passwordValue}
                     />
                     <label htmlFor={passwordInputId} className={kcClsx("kcLabelClass")}>
                         {msg("password")}
                     </label>
-                    {usernameHidden &&
-                        messagesPerField.existsError("username", "password") && (
-                            <div
-                                id="input-error-pwdfeedback"
-                                className={clsx(
-                                    kcClsx("kcInputErrorMessageClass"),
-                                    "input-error-pwdfeedback"
-                                )}
-                                aria-live="polite"
-                                dangerouslySetInnerHTML={{
-                                    __html: kcSanitize(
-                                        messagesPerField.getFirstError(
-                                            "username",
-                                            "password"
-                                        )
-                                    )
-                                }}
-                            />
-                        )}
+                    {usernameHidden && messagesPerField.existsError("username", "password") && (
+                        <div
+                            id="input-error-pwdfeedback"
+                            className={clsx(kcClsx("kcInputErrorMessageClass"), "input-error-pwdfeedback")}
+                            aria-live="polite"
+                            dangerouslySetInnerHTML={{
+                                __html: kcSanitize(messagesPerField.getFirstError("username", "password"))
+                            }}
+                        />
+                    )}
                 </div>
                 <button
                     className="btn btn-outline-secondary border-start-0"
@@ -78,13 +63,7 @@ export default function PasswordWrapper(props: {
                     onClick={toggleIsPasswordRevealed}
                     tabIndex={4}
                 >
-                    <i
-                        className={
-                            isPasswordRevealed ? "bi bi-eye-slash-fill" : "bi bi-eye-fill"
-                        }
-                        aria-hidden="true"
-                        id="password-icon"
-                    ></i>
+                    <i className={isPasswordRevealed ? "bi bi-eye-slash-fill" : "bi bi-eye-fill"} aria-hidden="true" id="password-icon"></i>
                 </button>
             </div>
         </div>

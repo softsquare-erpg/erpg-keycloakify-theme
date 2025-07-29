@@ -7,6 +7,8 @@ This Theme Fork from [Keycloakify](https://github.com/keycloakify/keycloakify-st
 ```bash
 git clone https://github.com/softsquare-erpg/erpg-keycloakify-theme
 cd erpg-keycloakify-theme
+npm install --global yarn
+yarn set version 4.5.1
 yarn install # Or use an other package manager, just be sure to delete the yarn.lock if you use another package manager.
 ```
 
@@ -49,8 +51,8 @@ Testing your theme in Storybook is helpful, but eventually, you'll need to test 
 
 #### Prerequisites
 
-    1. Install Docker
-    2. Install Java
+1. Install Docker
+2. Install Java
 
 ```bash
 yarn run keycloakify start-keycloak
