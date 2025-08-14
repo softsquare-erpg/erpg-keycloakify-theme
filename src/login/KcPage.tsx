@@ -15,6 +15,7 @@ const UserProfileFormFields = lazy(
 const Login = lazy(() => import("./pages/Login"));
 const LoginResetPassword = lazy(() => import("./pages/LoginResetPassword"));
 const LoginUpdatePassword = lazy(() => import("./pages/LoginUpdatePassword"));
+const EmailCodeForm = lazy(() => import("./pages/EmailCodeForm"));
 
 const doMakeUserConfirmPassword = true;
 
@@ -68,6 +69,14 @@ export default function KcPage(props: { kcContext: KcContext }) {
                                 doUseDefaultCss={true}
                             />
                         );
+                    case "email-code-form.ftl":
+                        return (
+                            <EmailCodeForm
+                                {...{ kcContext, i18n, classes }}
+                                Template={Template}
+                                doUseDefaultCss={true}
+                            />
+                        );
                     default:
                         return (
                             <DefaultPage
@@ -92,7 +101,7 @@ const classes = {
     kcInputClass: "form-control text-secondary",
     kcLabelClass: "text-secondary",
     kcInputErrorMessageClass: "invalid-feedback d-block",
-    kcButtonBlockClass: "btn pf-m-block",
+    kcButtonBlockClass: "btn btn-block",
     kcFormPasswordVisibilityButtonClass: "btn btn-outline-secondary border-start-0 py-0",
     kcFormPasswordVisibilityIconHide: "bi bi-eye-slash-fill",
     kcFormPasswordVisibilityIconShow: "bi bi-eye-fill"

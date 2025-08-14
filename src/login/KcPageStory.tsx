@@ -15,7 +15,14 @@ const kcContextExtension: KcContextExtension = {
         ...kcEnvDefaults
     }
 };
-const kcContextExtensionPerPage: KcContextExtensionPerPage = {};
+const kcContextExtensionPerPage: KcContextExtensionPerPage = {
+    "email-code-form.ftl": {
+        codeLength: 6,
+        emailCodeSent: true,
+        expirationTime: 300,
+        resendAvailable: true
+    }
+};
 
 export const { getKcContextMock } = createGetKcContextMock({
     kcContextExtension,

@@ -48,13 +48,6 @@ export default function LoginResetPassword(props: PageProps<Extract<KcContext, {
                             autoFocus
                             required
                             defaultValue={auth.attemptedUsername ?? ""}
-                            placeholder={
-                                !realm.loginWithEmailAllowed
-                                    ? msgStr("username")
-                                    : !realm.registrationEmailAsUsername
-                                      ? msgStr("usernameOrEmail")
-                                      : msgStr("email")
-                            }
                             aria-invalid={messagesPerField.existsError("username")}
                         />
                         {messagesPerField.existsError("username") && (

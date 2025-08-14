@@ -55,3 +55,4 @@ jspm_packages
 /build
 /storybook-static
 /.keycloakify
+/package

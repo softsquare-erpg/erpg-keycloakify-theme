@@ -16,7 +16,7 @@ export const Default: Story = {
     render: () => <KcPageStory />
 };
 
-export const Thai: Story = {
+export const ThaiLanguage: Story = {
     render: () => (
         <KcPageStory
             kcContext={{
