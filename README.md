@@ -55,7 +55,7 @@ Testing your theme in Storybook is helpful, but eventually, you'll need to test 
 2. Install Java
 
 ```bash
-yarn run keycloakify start-keycloak
+yarn run keycloakify start-keycloak --keycloak-version <version>
 ```
 
 ## Building the theme
@@ -79,8 +79,4 @@ yarn run build-keycloak-theme
 
 ## Deploy the theme
 
-Execute to deploy maven to your maven.pkg.github.com
-
-```bash
-./deploy-maven.sh
-```
+Execute to deploy maven to your maven.pkg.github.com with GitHub Actions
