@@ -243,6 +243,25 @@ export const WithErrorMessage: Story = {
     )
 };
 
+export const WithThaiIDProvider: Story = {
+    render: args => (
+        <KcPageStory
+            {...args}
+            kcContext={{
+                locale: {
+                    currentLanguageTag: "th"
+                },
+                social: {
+                    displayInfo: true,
+                    providers: [
+                        { loginUrl: "ThaiID", alias: "ThaiID", providerId: "ThaiID", displayName: "แอปพลิเคชัน ThaiID", iconClasses: "icon-thid-id" }
+                    ]
+                }
+            }}
+        ></KcPageStory>
+    )
+};
+
 export const WithOneSocialProvider: Story = {
     render: args => (
         <KcPageStory

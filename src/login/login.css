@@ -11,11 +11,16 @@
     --bs-form-invalid-color: var(--md-sys-color-error);
 }
 
+.login-pf-page .login-pf-page-header {
+    margin-bottom: unset;
+}
+
 .login-pf-page .logo {
     width: 140px;
     height: auto;
     margin-bottom: 1em;
 }
+
 .login-pf-page imglogo {
     /* find color from
    - https://change-svg-color.vercel.app/
@@ -23,25 +28,32 @@
     filter: brightness(0) saturate(100%) invert(30%) sepia(40%) saturate(1176%)
         hue-rotate(125deg) brightness(94%) contrast(101%);
 }
+
+.login-pf a:hover {
+    color: #fff;
+}
+
 .login-pf .card-pf {
     border-radius: 0.4rem;
 }
-.login-pf-page .btn {
-    box-shadow: none;
-}
+
 .login-pf-page .list-view-pf .list-group-item {
     border-bottom: 1px solid #ededed;
 }
+
 .login-pf-page .list-view-pf-description {
     width: 100%;
 }
+
 .pf-c-form__label-text {
     color: var(--bs-gray-700);
 }
+
 .card-pf {
     border-top: 4px solid;
     border-color: var(--md-sys-color-primary);
 }
+
 .pf-c-button.pf-m-primary {
     background-color: var(--md-sys-color-primary);
 }
@@ -50,6 +62,7 @@
 .input-group .form-control:focus {
     z-index: auto;
 }
+
 .form-control:focus {
     z-index: auto;
     border-color: var(--md-sys-color-primary-fixed-dim);
@@ -57,17 +70,22 @@
     outline: 0;
     border-width: 2px;
 }
+
 .form-control:hover {
     border-color: var(--md-sys-color-primary-fixed-dim);
 }
+
 .form-control::placeholder {
     color: var(--md-sys-color-outline-variant);
-    opacity: 1; /* Firefox */
+    opacity: 1;
+    /* Firefox */
 }
+
 .form-control::-ms-input-placeholder {
     /* Edge 12 -18 */
     color: var(--md-sys-color-outline-variant);
 }
+
 .login-header-text {
     color: var(--md-sys-color-primary);
 }
@@ -75,6 +93,7 @@
 button#kc-current-locale-link {
     text-decoration: none;
 }
+
 button#kc-current-locale-link::after {
     content: "\F282";
     font-family: bootstrap-icons !important;
@@ -95,6 +114,7 @@ button#kc-current-locale-link::after {
     background-color: var(--md-sys-color-primary);
     width: 100%;
 }
+
 .btn-signin:hover,
 .btn-signin:focus,
 .btn-signin:focus-visible {
@@ -102,10 +122,12 @@ button#kc-current-locale-link::after {
     color: var(--md-sys-color-on-primary);
     background-color: var(--md-sys-color-primary);
 }
+
 .btn-signin:active {
     filter: opacity(1);
     box-shadow: 0 0 0.25rem 2px rgba(0, 32, 25, 0.25);
 }
+
 .btn-signin:disabled {
     opacity: 0.9;
     color: var(--md-sys-color-on-primary) !important;
@@ -115,13 +137,16 @@ button#kc-current-locale-link::after {
 .form-control.is-invalid:focus {
     border-color: var(--bs-form-invalid-border-color);
 }
+
 .form-control.is-invalid:hover {
     border-color: var(--bs-form-invalid-border-color);
 }
+
 .btn:hover {
     color: #fff;
     background-color: color-mix(in srgb, var(--md-sys-color-primary) 90%, white);
 }
+
 .form-floating label.text-secondary {
     color: var(--md-sys-color-on-surface-variant) !important;
 }
@@ -130,6 +155,7 @@ button#kc-current-locale-link::after {
     color: var(--md-sys-color-on-surface);
     text-decoration: none;
 }
+
 .pf-c-dropdown__menu-item:focus,
 .pf-c-dropdown__menu-item:active {
     outline: none;
@@ -143,11 +169,22 @@ input[type="checkbox"] {
 .form-floating > .form-control {
     padding: 12px 16px;
 }
+
 .form-floating > label {
     padding: 12px 16px;
 }
 
 input::placeholder {
     color: var(--md-sys-color-on-surface-variant);
-    opacity: 1; /* Firefox */
+    opacity: 1;
+    /* Firefox */
+}
+
+.icon-thid-id {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url("/public/image/ThaID.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
