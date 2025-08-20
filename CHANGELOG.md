@@ -1,4 +1,4 @@
-## 📦 Update Log
+# 📦 Update Log
 
 - 🔄 **v1.0.0**
   - Initial release of the ERPG Keycloakify theme 🎨🔐
