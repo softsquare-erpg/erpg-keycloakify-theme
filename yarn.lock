@@ -4202,6 +4202,39 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ect-keycloakify-theme@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "ect-keycloakify-theme@workspace:."
+  dependencies:
+    "@eslint/js": "npm:^9.15.0"
+    "@storybook/react": "npm:^8.1.10"
+    "@storybook/react-vite": "npm:^8.1.10"
+    "@types/bootstrap": "npm:^5"
+    "@types/react": "npm:^18.2.43"
+    "@types/react-dom": "npm:^18.2.17"
+    "@typescript-eslint/eslint-plugin": "npm:^8.15.0"
+    "@typescript-eslint/parser": "npm:^8.15.0"
+    "@vitejs/plugin-react": "npm:^4.2.1"
+    bootstrap: "npm:^5.3.6"
+    bootstrap-icons: "npm:^1.13.1"
+    eslint: "npm:^9.15.0"
+    eslint-config-prettier: "npm:^9.1.0"
+    eslint-plugin-react: "npm:^7.37.2"
+    eslint-plugin-react-hooks: "npm:^5.0.0"
+    eslint-plugin-react-refresh: "npm:^0.4.14"
+    eslint-plugin-storybook: "npm:^0.11.1"
+    globals: "npm:^15.12.0"
+    keycloakify: "npm:^11.8.42"
+    prettier: "npm:3.3.1"
+    react: "npm:^18.2.0"
+    react-dom: "npm:^18.2.0"
+    storybook: "npm:^8.1.10"
+    typescript: "npm:^5.2.2"
+    typescript-eslint: "npm:^8.15.0"
+    vite: "npm:^5.0.8"
+  languageName: unknown
+  linkType: soft
+
 "ee-first@npm:1.1.1":
   version: 1.1.1
   resolution: "ee-first@npm:1.1.1"
@@ -4281,39 +4314,6 @@ __metadata:
   checksum: 10c0/9c279213cbbb353b3171e8e333fd2ed564054abade08ab3d735fe136e10a0e14e0588e1ce77e6f01285f2462eaca945d64f0778be5ae3d9e82804943e36a4411
   languageName: node
   linkType: hard
-
-"erpg-keycloakify-theme@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "erpg-keycloakify-theme@workspace:."
-  dependencies:
-    "@eslint/js": "npm:^9.15.0"
-    "@storybook/react": "npm:^8.1.10"
-    "@storybook/react-vite": "npm:^8.1.10"
-    "@types/bootstrap": "npm:^5"
-    "@types/react": "npm:^18.2.43"
-    "@types/react-dom": "npm:^18.2.17"
-    "@typescript-eslint/eslint-plugin": "npm:^8.15.0"
-    "@typescript-eslint/parser": "npm:^8.15.0"
-    "@vitejs/plugin-react": "npm:^4.2.1"
-    bootstrap: "npm:^5.3.6"
-    bootstrap-icons: "npm:^1.13.1"
-    eslint: "npm:^9.15.0"
-    eslint-config-prettier: "npm:^9.1.0"
-    eslint-plugin-react: "npm:^7.37.2"
-    eslint-plugin-react-hooks: "npm:^5.0.0"
-    eslint-plugin-react-refresh: "npm:^0.4.14"
-    eslint-plugin-storybook: "npm:^0.11.1"
-    globals: "npm:^15.12.0"
-    keycloakify: "npm:^11.8.42"
-    prettier: "npm:3.3.1"
-    react: "npm:^18.2.0"
-    react-dom: "npm:^18.2.0"
-    storybook: "npm:^8.1.10"
-    typescript: "npm:^5.2.2"
-    typescript-eslint: "npm:^8.15.0"
-    vite: "npm:^5.0.8"
-  languageName: unknown
-  linkType: soft
 
 "err-code@npm:^2.0.2":
   version: 2.0.3
