@@ -7,7 +7,7 @@
     --bs-btn-active-color: var(--md-sys-color-on-primary-container);
     --bs-btn-active-bg: var(--md-sys-color-primary);
     --bs-btn-active-border-color: var(--bs-border-color-translucent);
-    --bs-border-color: var(--md-sys-color-outline);
+    /* --bs-border-color: var(--md-sys-color-outline-variant); */
     --bs-form-invalid-color: var(--md-sys-color-error);
 }
 
@@ -30,7 +30,7 @@
 }
 
 .login-pf a:hover {
-    color: #fff;
+    color: var(--md-sys-color-on-primary-fixed-variant);
 }
 
 .login-pf .card-pf {
@@ -180,11 +180,21 @@ input::placeholder {
     /* Firefox */
 }
 
-.icon-thid-id {
+.icon-thaid {
     display: inline-block;
     width: 24px;
     height: 24px;
     background-image: url("/public/image/ThaID.png");
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+[id*="social-"] a:hover {
+    background-color: var(--md-sys-color-secondary-fixed-dim) !important;
+}
+
+.btn-outline-light-gray {
+    box-shadow: unset;
+    border-color: #dee2e6;
+    background-color: var(--md-sys-color-secondary-container);
 }

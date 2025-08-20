@@ -248,14 +248,15 @@ export const WithThaiIDProvider: Story = {
         <KcPageStory
             {...args}
             kcContext={{
+                realm: {
+                    displayName: "ENTERPRISE RESOURCE PLANNING"
+                },
                 locale: {
                     currentLanguageTag: "th"
                 },
                 social: {
                     displayInfo: true,
-                    providers: [
-                        { loginUrl: "ThaiID", alias: "ThaiID", providerId: "ThaiID", displayName: "แอปพลิเคชัน ThaiID", iconClasses: "icon-thid-id" }
-                    ]
+                    providers: [{ loginUrl: "thaid", alias: "thaid", providerId: "ThaID", displayName: "แอปพลิเคชัน ThaID", iconClasses: "thaid" }]
                 }
             }}
         ></KcPageStory>
