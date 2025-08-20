@@ -102,7 +102,7 @@ const classes = {
     kcLabelClass: "text-secondary",
     kcInputErrorMessageClass: "invalid-feedback d-block",
     kcButtonBlockClass: "btn btn-block",
-    kcFormPasswordVisibilityButtonClass: "btn btn-outline-secondary border-start-0 py-0",
+    kcFormPasswordVisibilityButtonClass: "btn btn-outline-light-gray border-start-0 py-0",
     kcFormPasswordVisibilityIconHide: "bi bi-eye-slash-fill",
     kcFormPasswordVisibilityIconShow: "bi bi-eye-fill",
     kcFormSocialAccountListButtonClass: "d-block btn bg-body-tertiary"
