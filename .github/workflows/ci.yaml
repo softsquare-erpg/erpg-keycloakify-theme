@@ -26,14 +26,8 @@ jobs:
                   node-version: "20"
                   cache: "npm"
 
-            - name: Enable Corepack (for Yarn 4+)
-              run: corepack enable
-
-            - name: Install dependencies using Yarn 4
-              run: yarn install --immutable
-
             - name: Build Keycloak theme
-              run: yarn run build-keycloak-theme
+              run: npm run build-keycloak-theme
 
             - name: Extract theme name and registry URL from package.json
               id: extract
