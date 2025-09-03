@@ -1,4 +1,4 @@
-@import url("../theme/light.css");
+@import url("../theme/theme.css");
 
 :scope {
     --custom-accent-dimmed: #f3fff9;
