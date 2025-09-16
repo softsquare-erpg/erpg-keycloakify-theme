@@ -27,7 +27,9 @@ jobs:
                   cache: "npm"
 
             - name: Build Keycloak theme
-              run: npm run build-keycloak-theme
+              run: |
+                  npm ci
+                  npm run build-keycloak-theme
 
             - name: Extract theme name and registry URL from package.json
               id: extract
