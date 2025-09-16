@@ -106,7 +106,9 @@ export default function OTPInputBoxes({
             {Array.from({ length: CODE_LENGTH }, (_, index) => (
                 <input
                     key={index}
-                    ref={el => (inputRefs.current[index] = el)}
+                    ref={el => {
+                        inputRefs.current[index] = el;
+                    }}
                     type="text"
                     inputMode="numeric"
                     className={clsx(className, hasError)}

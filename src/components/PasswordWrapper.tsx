@@ -1,6 +1,7 @@
 import { I18n } from "keycloakify/login/i18n";
 import { KcClsx } from "keycloakify/login/lib/kcClsx";
 import { useIsPasswordRevealed } from "keycloakify/tools/useIsPasswordRevealed";
+import { JSX } from "react";
 
 export default function PasswordWrapper(props: {
     kcClsx: KcClsx;
