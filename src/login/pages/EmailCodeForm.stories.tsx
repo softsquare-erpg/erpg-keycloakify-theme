@@ -34,7 +34,8 @@ export const WithError: Story = {
                 emailCodeSent: true,
                 resendAvailable: true,
                 codeLength: 6,
-                expirationTime: 300
+                expirationTime: 300,
+                lastSentTime: "200"
             }}
         />
     )
@@ -81,7 +82,8 @@ export const ThaiLanguageWithError: Story = {
                 emailCodeSent: true,
                 resendAvailable: true,
                 codeLength: 6,
-                expirationTime: 300
+                expirationTime: 300,
+                lastSentTime: "200"
             }}
         />
     )

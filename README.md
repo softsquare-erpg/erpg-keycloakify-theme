@@ -53,7 +53,7 @@ Testing your theme in Storybook is helpful, but eventually, you'll need to test 
 2. Install Java
 
 ```bash
-npm run keycloakify start-keycloak --keycloak-version <version>
+npx keycloakify start-keycloak --keycloak-version <version>
 ```
 
 ## Building the theme

@@ -14,6 +14,7 @@ export type KcContextExtensionPerPage = {
         resendAvailable?: boolean;
         codeLength?: number;
         expirationTime?: number;
+        lastSentTime?: string;
     };
 };
 

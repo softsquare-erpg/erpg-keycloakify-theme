@@ -1,7 +1,7 @@
 import { getKcClsx } from "keycloakify/login/lib/kcClsx";
 import type { PageProps } from "keycloakify/login/pages/PageProps";
 import { clsx } from "keycloakify/tools/clsx";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import OTPInputBoxes, { CODE_LENGTH } from "../../components/OTPInputBoxes";
 import type { KcContext } from "../KcContext";
 import type { I18n } from "../i18n";
@@ -9,12 +9,18 @@ import type { I18n } from "../i18n";
 type ResendLinkProps = {
     url: string;
     children: React.ReactNode;
+    disabled?: boolean;
+    onClick?: () => void;
 };
 
-function ResendLink({ url, children }: ResendLinkProps) {
+function ResendLink({ url, children, disabled, onClick }: ResendLinkProps) {
     const handleResend = useCallback(
         (e: React.MouseEvent) => {
             e.preventDefault();
+
+            if (disabled) return;
+
+            onClick?.();
 
             const form = document.createElement("form");
             form.method = "POST";
@@ -29,11 +35,19 @@ function ResendLink({ url, children }: ResendLinkProps) {
             document.body.appendChild(form);
             form.submit();
         },
-        [url]
+        [url, disabled, onClick]
     );
 
     return (
-        <a href="#" onClick={handleResend}>
+        <a
+            href="#"
+            onClick={handleResend}
+            style={{
+                color: disabled ? "#999" : undefined,
+                pointerEvents: disabled ? "none" : "auto",
+                textDecoration: disabled ? "none" : undefined
+            }}
+        >
             {children}
         </a>
     );
@@ -46,9 +60,79 @@ export default function EmailCodeForm(props: PageProps<Extract<KcContext, { page
     const { msg, msgStr } = i18n;
 
     const [codes, setCodes] = useState<string[]>(Array(CODE_LENGTH).fill(""));
+    const [resendCooldown, setResendCooldown] = useState<number>(0);
+    const [isResendDisabled, setIsResendDisabled] = useState<boolean>(false);
+    const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
     const emailCode = codes.join("");
     const hasError = messagesPerField.existsError("emailCode");
     const isCodeComplete = emailCode.length === CODE_LENGTH;
+
+    // Constants
+    const COOLDOWN_SECONDS = 20;
+
+    // Get last sent time from kcContext attributes (passed from backend)
+    const lastSentTime = kcContext.lastSentTime ? parseInt(kcContext.lastSentTime) : null;
+
+    // Initialize cooldown on component mount
+    useEffect(() => {
+        if (lastSentTime) {
+            const currentTime = Date.now();
+            const timeDiff = currentTime - lastSentTime;
+            const remainingCooldown = Math.max(0, COOLDOWN_SECONDS - Math.floor(timeDiff / 1000));
+
+            if (remainingCooldown > 0) {
+                setResendCooldown(remainingCooldown);
+                setIsResendDisabled(true);
+                startCooldownTimer(remainingCooldown);
+            }
+        }
+    }, [lastSentTime]);
+
+    const startCooldownTimer = useCallback((initialSeconds: number) => {
+        if (intervalRef.current) {
+            clearInterval(intervalRef.current);
+        }
+
+        let seconds = initialSeconds;
+        setResendCooldown(seconds);
+        setIsResendDisabled(true);
+
+        intervalRef.current = setInterval(() => {
+            seconds -= 1;
+            setResendCooldown(seconds);
+
+            if (seconds <= 0) {
+                setIsResendDisabled(false);
+                if (intervalRef.current) {
+                    clearInterval(intervalRef.current);
+                    intervalRef.current = null;
+                }
+            }
+        }, 1000);
+    }, []);
+
+    const handleResendClick = useCallback(() => {
+        if (!isResendDisabled) {
+            startCooldownTimer(COOLDOWN_SECONDS);
+        }
+    }, [isResendDisabled, startCooldownTimer]);
+
+    // Cleanup interval on unmount
+    useEffect(() => {
+        return () => {
+            if (intervalRef.current) {
+                clearInterval(intervalRef.current);
+            }
+        };
+    }, []);
+
+    const getResendText = useCallback(() => {
+        if (isResendDisabled && resendCooldown > 0) {
+            return `${msgStr("resendCode")} (${resendCooldown}s)`;
+        }
+        return msgStr("resendCode");
+    }, [isResendDisabled, resendCooldown, msgStr]);
 
     return (
         <Template
@@ -73,7 +157,8 @@ export default function EmailCodeForm(props: PageProps<Extract<KcContext, { page
                         {hasError && (
                             <div className="text-center mt-2">
                                 <span id="input-error-email-code" aria-live="polite" className={clsx(classes?.kcInputErrorMessageClass)}>
-                                    {msg("emailCodeInvalid")}
+                                    {/* Show specific error message if it's a cooldown error */}
+                                    {messagesPerField.get("resend.cooldown.message") || msg("emailCodeInvalid")}
                                 </span>
                             </div>
                         )}
@@ -84,7 +169,9 @@ export default function EmailCodeForm(props: PageProps<Extract<KcContext, { page
                     <div></div>
                     <div className={kcClsx("kcFormOptionsWrapperClass")}>
                         <span>
-                            <ResendLink url={url.loginAction}>{msg("resendCode")}</ResendLink>
+                            <ResendLink url={url.loginAction} disabled={isResendDisabled} onClick={handleResendClick}>
+                                {getResendText()}
+                            </ResendLink>
                         </span>
                     </div>
                 </div>
@@ -99,6 +186,11 @@ export default function EmailCodeForm(props: PageProps<Extract<KcContext, { page
                         />
                     </div>
                 </div>
+
+                {/* Optional: Show cooldown info */}
+                {isResendDisabled && resendCooldown > 0 && (
+                    <div className="text-center mt-2 text-sm text-gray-500">{msg("resendCooldownInfo", resendCooldown.toString())}</div>
+                )}
             </form>
         </Template>
     );

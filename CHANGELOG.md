@@ -13,6 +13,10 @@
   - ThaID Social Providers Node
   - Refactor form, btn border color
 
+- 🔄 **v2.0.0**
+  - Upgrade to React version 19 & other denpendencies.
+  - Refactor Theme
+
 ---
 
 _For future updates, add your changes here with version and date!_

@@ -7,6 +7,7 @@ const { useI18n, ofTypeI18n } = i18nBuilder
     .withThemeName<ThemeName>()
     .withCustomTranslations({
         en: {
+            resendCooldownInfo: "Please wait {0} seconds before requesting another code",
             resendCode: "Resend Code",
             emailAuthenticatorDisplayName: "Email Authenticator",
             emailCodeInvalid: "Invalid OTP code",
@@ -17,6 +18,7 @@ const { useI18n, ofTypeI18n } = i18nBuilder
             emailOTPFormPlaceholder: "Enter Verification Code"
         },
         th: {
+            resendCooldownInfo: "โปรดรอสักครู่ {0} วินาที ก่อนที่จะขอรหัสยืนยันใหม่",
             resendCode: "ส่งรหัสอีกครั้ง",
             emailAuthenticatorDisplayName: "ยืนยันตัวตนทางอีเมล",
             emailCodeInvalid: "รหัส OTP ไม่ถูกต้อง",
@@ -31,3 +33,4 @@ const { useI18n, ofTypeI18n } = i18nBuilder
 type I18n = typeof ofTypeI18n;
 
 export { useI18n, type I18n };
+
